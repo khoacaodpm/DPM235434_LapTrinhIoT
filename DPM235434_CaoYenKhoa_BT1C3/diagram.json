@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "author": "CAO YEN KHOA",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-breadboard",
+      "id": "bb1",
+      "top": 62.6,
+      "left": -5.6,
+      "rotate": 90,
+      "attrs": {}
+    },
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": -18.6, "left": -106.2, "attrs": {} },
+    { "type": "wokwi-potentiometer", "id": "pot1", "top": -183.7, "left": -9.8, "attrs": {} }
+  ],
+  "connections": [
+    [ "pot1:GND", "bb1:bn.6", "black", [ "v0" ] ],
+    [ "pot1:VCC", "bb1:bp.5", "red", [ "v0" ] ],
+    [ "uno:5V", "bb1:bp.34", "red", [ "v0" ] ],
+    [ "uno:GND.2", "bb1:bn.33", "black", [ "v0" ] ],
+    [ "uno:A0", "bb1:39b.h", "green", [ "v0" ] ],
+    [ "pot1:SIG", "bb1:39b.f", "green", [ "v48", "h278" ] ]
+  ],
+  "dependencies": {}
+}

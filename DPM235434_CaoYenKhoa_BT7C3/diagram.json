@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "author": "CAO YEN KHOA",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-breadboard-half", "id": "bb1", "top": -166.2, "left": 12.4, "attrs": {} },
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 67.8, "left": 37.8, "attrs": {} },
+    {
+      "type": "wokwi-led-strip",
+      "id": "strip1",
+      "top": -237.9,
+      "left": 86.4,
+      "attrs": { "pixels": "8" }
+    }
+  ],
+  "connections": [
+    [ "strip1:VDD", "bb1:tp.1", "red", [ "h-96", "v76.5" ] ],
+    [ "strip1:DIN", "bb1:4t.b", "green", [ "h-19.2", "v114.8" ] ],
+    [ "bb1:4t.c", "uno:12", "green", [ "v0" ] ],
+    [ "strip1:VSS", "bb1:tn.5", "black", [ "h0" ] ],
+    [ "bb1:tp.25", "uno:5V", "green", [ "h49.6", "v451.5", "h-167" ] ],
+    [ "bb1:tn.25", "uno:GND.2", "green", [ "h30.4", "v422.3", "h-138.3" ] ]
+  ],
+  "dependencies": {}
+}
