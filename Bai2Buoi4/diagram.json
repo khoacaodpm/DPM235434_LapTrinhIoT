@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "author": "CAO YEN KHOA",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-breadboard-half", "id": "bb1", "top": -12.6, "left": -35.6, "attrs": {} },
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": -9.6, "left": -167.96, "attrs": {} },
+    { "type": "wokwi-servo", "id": "servo1", "top": 209.2, "left": 172.8, "attrs": {} },
+    { "type": "chip-rain-sensor", "id": "chip1", "top": 39.42, "left": 110.4, "attrs": {} }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "bb1:tn.1", "esp:GND.2", "black", [ "v0" ] ],
+    [ "bb1:tp.2", "esp:5V", "red", [ "v211.5", "h-171.35" ] ],
+    [ "servo1:V+", "bb1:tp.21", "red", [ "h-28.8", "v-172.7", "h86.4" ] ],
+    [ "servo1:GND", "bb1:tn.22", "black", [ "h-9.6", "v-144", "h76.8" ] ],
+    [ "esp:12", "servo1:PWM", "green", [ "h-38.25", "v143.8" ] ],
+    [ "chip1:VCC", "esp:5V", "red", [ "h0" ] ],
+    [ "chip1:GND", "esp:GND.2", "black", [ "h0" ] ],
+    [ "chip1:DO", "esp:14", "green", [ "h0" ] ]
+  ],
+  "dependencies": {}
+}

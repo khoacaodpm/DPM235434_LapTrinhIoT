@@ -1,0 +1,48 @@
+{
+  "version": 1,
+  "author": "CAO YEN KHOA",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-breadboard-half", "id": "bb1", "top": -31.8, "left": -26, "attrs": {} },
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": -38.4, "left": -148.76, "attrs": {} },
+    { "type": "wokwi-led", "id": "led1", "top": -32.4, "left": 42.2, "attrs": { "color": "red" } },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 52.8,
+      "left": 37.85,
+      "rotate": 90,
+      "attrs": { "value": "220" }
+    },
+    {
+      "type": "wokwi-lcd1602",
+      "id": "lcd1",
+      "top": -60.8,
+      "left": 197.6,
+      "attrs": { "pins": "i2c" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "lcd1:GND", "bb1:15b.f", "black", [ "h0" ] ],
+    [ "bb1:bn.12", "bb1:15b.j", "black", [ "v0" ] ],
+    [ "lcd1:VCC", "bb1:17b.f", "red", [ "h0" ] ],
+    [ "bb1:bn.5", "bb1:7b.j", "black", [ "h11.2", "v-39.7" ] ],
+    [ "bb1:bp.14", "bb1:17b.j", "red", [ "v0" ] ],
+    [ "bb1:bp.1", "esp:5V", "red", [ "v37.5", "h-152.15" ] ],
+    [ "lcd1:SDA", "bb1:19b.f", "green", [ "h0" ] ],
+    [ "lcd1:SCL", "bb1:21b.f", "green", [ "h0" ] ],
+    [ "esp:21", "bb1:19b.i", "green", [ "h19.2", "v67.2", "h201.6" ] ],
+    [ "led1:A", "bb1:8t.a", "green", [ "v0" ] ],
+    [ "bb1:8b.i", "esp:2", "green", [ "h-96", "v9.6" ] ],
+    [ "esp:22", "bb1:21b.g", "green", [ "h28.8", "v86.4" ] ],
+    [ "led1:C", "bb1:7b.f", "green", [ "v0" ] ],
+    [ "r1:1", "bb1:8t.b", "", [ "$bb" ] ],
+    [ "r1:2", "bb1:8b.f", "", [ "$bb" ] ],
+    [ "lcd1:VCC", "bb1:tp.18", "", [ "$bb" ] ],
+    [ "lcd1:SDA", "bb1:tn.18", "", [ "$bb" ] ],
+    [ "bb1:bn.3", "esp:GND.1", "black", [ "v46.7", "h-190.4", "v-96" ] ]
+  ],
+  "dependencies": {}
+}

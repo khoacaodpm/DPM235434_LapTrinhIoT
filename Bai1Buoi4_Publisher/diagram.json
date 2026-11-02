@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "author": "CAO YEN KHOA",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-breadboard-half", "id": "bb1", "top": -3, "left": -26, "attrs": {} },
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": -9.6, "left": -167.96, "attrs": {} },
+    { "type": "wokwi-dht22", "id": "dht1", "top": -47.7, "left": 61.8, "attrs": {} }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "dht1:VCC", "bb1:9t.c", "", [ "$bb" ] ],
+    [ "dht1:SDA", "bb1:10t.c", "", [ "$bb" ] ],
+    [ "dht1:NC", "bb1:11t.c", "", [ "$bb" ] ],
+    [ "dht1:GND", "bb1:12t.c", "", [ "$bb" ] ],
+    [ "dht1:GND", "bb1:12b.f", "black", [ "v0" ] ],
+    [ "dht1:VCC", "bb1:9b.f", "red", [ "v0" ] ],
+    [ "dht1:SDA", "bb1:10b.f", "green", [ "v0" ] ],
+    [ "bb1:bn.10", "bb1:12b.j", "black", [ "v0" ] ],
+    [ "bb1:bp.7", "bb1:9b.j", "red", [ "v0" ] ],
+    [ "bb1:10b.h", "esp:15", "green", [ "h-124.8", "v28.8" ] ],
+    [ "bb1:bp.3", "esp:3V3", "red", [ "v47.1", "h-219.2", "v-211.2" ] ],
+    [ "bb1:bn.1", "esp:GND.1", "black", [ "v27.5", "h-180.8", "v-76.8" ] ]
+  ],
+  "dependencies": {}
+}
